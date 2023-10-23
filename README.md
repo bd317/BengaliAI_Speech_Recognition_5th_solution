@@ -7,38 +7,40 @@ Solution of the 5th of the Kaggle Bengali.AI speech recognition challenge
 Competition training data<br>
 https://www.kaggle.com/competitions/bengaliai-speech/data
 
+```!unzip bengali-speech.zip```<br>
+```!mv bengali-speech/* data/```
+
 Competition meta data for training data<br>
 https://www.kaggle.com/datasets/imtiazprio/bengaliai-speech-train-nisqa
 
-```!unzip bengali-speech.zip```<br>
-```!mv bengali-speech/* data/```
+Download and place it in data/ as well.
 
 ## Language model
 IndicCorp v2<br>
 MIT License (https://github.com/AI4Bharat/IndicBERT/blob/main/LICENSE)<br>
 https://objectstore.e2enetworks.net/ai4b-public-nlu-nlg/indic-corp-frozen-for-the-paper-oct-2022/bn.txt
 
-!mv bn.txt language_model/base_files/
+```!mv bn.txt language_model/base_files/```
 
 IndicCorp processed & tokenized (https://github.com/Open-Speech-EkStep/vakyansh-models#punctuation-models):<br>
 MIT License (same as above) (https://github.com/Open-Speech-EkStep/vakyansh-models/blob/main/LICENSE)<br>
 https://storage.googleapis.com/vakyansh-open-models/language_model_text/bengali.zip
 
-!unzip bengali.zip<br>
-!mv bengali/* language_model/base_files/
+```!unzip bengali.zip```br>
+```!mv bengali/* language_model/base_files/```
 
 OpenSLR 53:<br>
 Apache License 2.0 (https://github.com/danpovey/openslr/blob/master/LICENSE)<br>
 https://us.openslr.org/resources/53/utt_spk_text.tsv
 
-!mv utt.spk_text.tsv language_model/base_files/
+```!mv utt.spk_text.tsv language_model/base_files/```
 
 DL Sprint competition data:<br>
 https://www.kaggle.com/competitions/dlsprint/data
 
-!unzip dl-sprint.zip<br>
-!mv dl-sprint/train.csv dl-sprint/train_dl_sprint.csv<br>
-!mv dl-sprint/train_dl_sprint.csv language_model/base_files/
+```!unzip dl-sprint.zip```<br>
+```!mv dl-sprint/train.csv dl-sprint/train_dl_sprint.csv```<br>
+```!mv dl-sprint/train_dl_sprint.csv language_model/base_files/```
 
 # CTC model training:
 
@@ -83,3 +85,6 @@ Copy the unigram from the lms/new_model_arpa to lms/new_model_bin_mixed after cr
 # Inference:
 Inference notebook is found here:
 https://www.kaggle.com/code/benbla/5th-place-solution
+
+### Notes
+Training and val loss or WER scores may differ in earlier epochs because seed_everything was not set in the original version. However, the differences are negligible after a few thousand training steps.
