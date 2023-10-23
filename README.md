@@ -46,47 +46,47 @@ https://www.kaggle.com/competitions/dlsprint/data
 
 ## Stage 1 training
 
-Run preprocessing\filtering_v1_mos.ipynb
+Run **preprocessing\filtering_v1_mos.ipynb**
 
 This notebook will filter the training data based on the mos scores calculated by the competition hosts and create train_21.csv and val_21.csv in the folder data/.
 
-After run experiments\train_w2w_baseline_v7_v5_v3_v2.ipynb
+After run **experiments\train_w2w_baseline_v7_v5_v3_v2.ipynb**
 
 This notebook will do stage 1 training. The model will be used to pseudo label the data and calculate wer scores in the next step.
 
 ## Stage 2 training
 
-Now run filtering_v2_wer.ipynb
+Now run **filtering_v2_wer.ipynb**
 
 It will calculate wer scores based on the previous model and filter the dataset for lower wer scores. This enhances the quality of the training data.
 
 Now the final models can be trained:
 
-IndicWav2Vec backbone:
-train_w2w_baseline_v35.ipynb
+IndicWav2Vec backbone:<br>
+train_w2w_baseline_v35.ipynb<br>
 This model will be trained for 210 steps.
 
-1b backbone:
-train_w2w_baseline_v32.ipynb
+1b backbone:<br>
+train_w2w_baseline_v32.ipynb<br>
 This model will be trained for 130k steps (longer
 
 ## Ensemble training
 
-Now the ensemble model can be trained:
+Now the ensemble model can be trained:<br>
 train_w2w_baseline_v34_ensemble.ipynb
 
 Use the 6k training step checkpoint.
 
 # Language model training:
-Run language_model/language_model_current_v12.ipynb
+Run **language_model/language_model_current_v12.ipynb**<br>
 Copy the unigram from the lms/new_model_arpa to lms/new_model_bin_mixed after creating the binary file.
 
 # Inference:
-Inference notebook is found here:
+Inference notebook is found here:<br>
 https://www.kaggle.com/code/benbla/5th-place-solution
 
 ### Notes
 Training and val loss or WER scores may differ in earlier epochs because seed_everything was not set in the original version. <br>
 However, the differences are negligible after a few thousand training steps.<br>
 In the original version WandB was used to track the experiments. The flag was set to False in this repository. By commenting out the following line, tracking can be reactivated:<br>
-os.environ["WANDB_DISABLED"] = "true".
+os.environ["WANDB_DISABLED"] = "true"
