@@ -48,27 +48,27 @@ https://www.kaggle.com/competitions/dlsprint/data
 
 Run preprocessing\filtering_v1_mos.ipynb
 
-This notebook will filter the training data based on the mos scores calculated by the competition hosts and create train_21.csv and val_21.csv in the folder data.
+This notebook will filter the training data based on the mos scores calculated by the competition hosts and create train_21.csv and val_21.csv in the folder data/.
 
 After run experiments\train_w2w_baseline_v7_v5_v3_v2.ipynb
 
-This notebook will do stage 1 training. This model will be used to pseudo label the data and calculate a wer score in the next step
+This notebook will do stage 1 training. The model will be used to pseudo label the data and calculate wer scores in the next step.
 
 ## Stage 2 training
 
 Now run filtering_v2_wer.ipynb
 
-It will calculate wer scores based on the previous model and filter the dataset. This enhances the quality of the training data.
+It will calculate wer scores based on the previous model and filter the dataset for lower wer scores. This enhances the quality of the training data.
 
 Now the final models can be trained:
 
 IndicWav2Vec backbone:
 train_w2w_baseline_v35.ipynb
-This model will be trained for 130k steps.
+This model will be trained for 210 steps.
 
 1b backbone:
 train_w2w_baseline_v32.ipynb
-This model will be trained for 210k steps.
+This model will be trained for 130k steps (longer
 
 ## Ensemble training
 
