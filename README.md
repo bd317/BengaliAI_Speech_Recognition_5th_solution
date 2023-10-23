@@ -73,7 +73,7 @@ This model will be trained for 130k steps (longer
 ## Ensemble training
 
 Now the ensemble model can be trained:<br>
-train_w2w_baseline_v34_ensemble.ipynb
+**train_w2w_baseline_v34_ensemble.ipynb**
 
 Use the 6k training step checkpoint.
 
