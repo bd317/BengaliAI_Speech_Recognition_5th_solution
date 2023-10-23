@@ -7,38 +7,37 @@ Solution of the 5th of the Kaggle Bengali.AI speech recognition challenge
 Competition training data<br>
 https://www.kaggle.com/competitions/bengaliai-speech/data
 
-Competition meta data for training data
+Competition meta data for training data<br>
 https://www.kaggle.com/datasets/imtiazprio/bengaliai-speech-train-nisqa
 
 !unzip bengali-speech.zip
 !mv bengali-speech/* data/
 
 ## Language model
-IndicCorp v2:
-License: MIT License (https://github.com/AI4Bharat/IndicBERT/blob/main/LICENSE)
+IndicCorp v2:<br>
+License: <br>MIT License (https://github.com/AI4Bharat/IndicBERT/blob/main/LICENSE)<br>
 https://objectstore.e2enetworks.net/ai4b-public-nlu-nlg/indic-corp-frozen-for-the-paper-oct-2022/bn.txt
 
 !mv bn.txt language_model/base_files/
 
-IndicCorp processed & tokenized (https://github.com/Open-Speech-EkStep/vakyansh-models#punctuation-models):
-License: MIT License (same as above) (https://github.com/Open-Speech-EkStep/vakyansh-models/blob/main/LICENSE)
+IndicCorp processed & tokenized (https://github.com/Open-Speech-EkStep/vakyansh-models#punctuation-models):<br>
+License: <br>MIT License (same as above) (https://github.com/Open-Speech-EkStep/vakyansh-models/blob/main/LICENSE)<br>
 https://storage.googleapis.com/vakyansh-open-models/language_model_text/bengali.zip
 
-!unzip bengali.zip
+!unzip bengali.zip<br>
 !mv bengali/* language_model/base_files/
 
-OpenSLR 53:
-License: Apache License 2.0 (https://github.com/danpovey/openslr/blob/master/LICENSE)
+OpenSLR 53:<br>
+License: <br>Apache License 2.0 (https://github.com/danpovey/openslr/blob/master/LICENSE)<br>
 https://us.openslr.org/resources/53/utt_spk_text.tsv
 
 !mv utt.spk_text.tsv language_model/base_files/
 
-DL Sprint competition data:
+DL Sprint competition data:<br>
 https://www.kaggle.com/competitions/dlsprint/data
 
-!unzip dl-sprint.zip
-mv dl-sprint/train.csv dl-sprint/train_dl_sprint.csv
-
+!unzip dl-sprint.zip<br>
+!mv dl-sprint/train.csv dl-sprint/train_dl_sprint.csv<br>
 !mv dl-sprint/train_dl_sprint.csv language_model/base_files/
 
 
