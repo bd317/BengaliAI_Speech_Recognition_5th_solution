@@ -10,25 +10,25 @@ https://www.kaggle.com/competitions/bengaliai-speech/data
 Competition meta data for training data<br>
 https://www.kaggle.com/datasets/imtiazprio/bengaliai-speech-train-nisqa
 
-!unzip bengali-speech.zip
-!mv bengali-speech/* data/
+```!unzip bengali-speech.zip<br>
+!mv bengali-speech/* data/```
 
 ## Language model
-IndicCorp v2:<br>
-License: <br>MIT License (https://github.com/AI4Bharat/IndicBERT/blob/main/LICENSE)<br>
+IndicCorp v2<br>
+MIT License (https://github.com/AI4Bharat/IndicBERT/blob/main/LICENSE)<br>
 https://objectstore.e2enetworks.net/ai4b-public-nlu-nlg/indic-corp-frozen-for-the-paper-oct-2022/bn.txt
 
 !mv bn.txt language_model/base_files/
 
 IndicCorp processed & tokenized (https://github.com/Open-Speech-EkStep/vakyansh-models#punctuation-models):<br>
-License: <br>MIT License (same as above) (https://github.com/Open-Speech-EkStep/vakyansh-models/blob/main/LICENSE)<br>
+MIT License (same as above) (https://github.com/Open-Speech-EkStep/vakyansh-models/blob/main/LICENSE)<br>
 https://storage.googleapis.com/vakyansh-open-models/language_model_text/bengali.zip
 
 !unzip bengali.zip<br>
 !mv bengali/* language_model/base_files/
 
 OpenSLR 53:<br>
-License: <br>Apache License 2.0 (https://github.com/danpovey/openslr/blob/master/LICENSE)<br>
+Apache License 2.0 (https://github.com/danpovey/openslr/blob/master/LICENSE)<br>
 https://us.openslr.org/resources/53/utt_spk_text.tsv
 
 !mv utt.spk_text.tsv language_model/base_files/
@@ -40,14 +40,13 @@ https://www.kaggle.com/competitions/dlsprint/data
 !mv dl-sprint/train.csv dl-sprint/train_dl_sprint.csv<br>
 !mv dl-sprint/train_dl_sprint.csv language_model/base_files/
 
-
 # CTC model training:
 
 ## Stage 1 training
 
 Run preprocessing\filtering_v1_mos.ipynb
 
-This notebook will filter the training data based on the mos scores calculated by the competition hosts and create train_21.csv and val_21.csv in the folder xy.
+This notebook will filter the training data based on the mos scores calculated by the competition hosts and create train_21.csv and val_21.csv in the folder data.
 
 After run experiments\train_w2w_baseline_v7_v5_v3_v2.ipynb
 
