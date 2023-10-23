@@ -26,7 +26,7 @@ IndicCorp processed & tokenized (https://github.com/Open-Speech-EkStep/vakyansh-
 MIT License (same as above) (https://github.com/Open-Speech-EkStep/vakyansh-models/blob/main/LICENSE)<br>
 https://storage.googleapis.com/vakyansh-open-models/language_model_text/bengali.zip
 
-```!unzip bengali.zip```br>
+```!unzip bengali.zip```<br>
 ```!mv bengali/* language_model/base_files/```
 
 OpenSLR 53:<br>
@@ -58,9 +58,9 @@ This notebook will do stage 1 training. This model will be used to pseudo label 
 
 Now run filtering_v2_wer.ipynb
 
-It will filter calculate wer scores based on the previous model and filter the dataset with wer < 0.5. This enhances the quality of the training data.
+It will calculate wer scores based on the previous model and filter the dataset. This enhances the quality of the training data.
 
-Now we can train the final single models:
+Now the final models can be trained:
 
 IndicWav2Vec backbone:
 train_w2w_baseline_v35.ipynb
@@ -75,16 +75,18 @@ This model will be trained for 210k steps.
 Now the ensemble model can be trained:
 train_w2w_baseline_v34_ensemble.ipynb
 
-Use the 6k training step checkpoint
+Use the 6k training step checkpoint.
 
 # Language model training:
 Run language_model/language_model_current_v12.ipynb
 Copy the unigram from the lms/new_model_arpa to lms/new_model_bin_mixed after creating the binary file.
-
 
 # Inference:
 Inference notebook is found here:
 https://www.kaggle.com/code/benbla/5th-place-solution
 
 ### Notes
-Training and val loss or WER scores may differ in earlier epochs because seed_everything was not set in the original version. However, the differences are negligible after a few thousand training steps.
+Training and val loss or WER scores may differ in earlier epochs because seed_everything was not set in the original version. <br>
+However, the differences are negligible after a few thousand training steps.<br>
+In the original version WandB was used to track the experiments. The flag was set to False in this repository. By commenting out the following line, tracking can be reactivated:<br>
+os.environ["WANDB_DISABLED"] = "true".
