@@ -63,11 +63,11 @@ It will calculate wer scores based on the previous model and filter the dataset 
 Now the final models can be trained:
 
 IndicWav2Vec backbone:<br>
-train_w2w_baseline_v35.ipynb<br>
+**train_w2w_baseline_v35.ipynb**<br>
 This model will be trained for 210 steps.
 
 1b backbone:<br>
-train_w2w_baseline_v32.ipynb<br>
+**train_w2w_baseline_v32.ipynb**<br>
 This model will be trained for 130k steps (longer
 
 ## Ensemble training
@@ -86,7 +86,6 @@ Inference notebook is found here:<br>
 https://www.kaggle.com/code/benbla/5th-place-solution
 
 ### Notes
-Training and val loss or WER scores may differ in earlier epochs because seed_everything was not set in the original version. <br>
-However, the differences are negligible after a few thousand training steps.<br>
+Training and val loss or WER scores may differ in earlier epochs because seed_everything was not set in the original version. However, the differences are negligible after a few thousand training steps.<br>
 In the original version WandB was used to track the experiments. The flag was set to False in this repository. By commenting out the following line, tracking can be reactivated:<br>
 os.environ["WANDB_DISABLED"] = "true"
