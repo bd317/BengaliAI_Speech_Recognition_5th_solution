@@ -11,7 +11,6 @@ Competition meta data for training data<br>
 https://www.kaggle.com/datasets/imtiazprio/bengaliai-speech-train-nisqa
 
 ```!unzip bengali-speech.zip```<br>
-
 ```!mv bengali-speech/* data/```
 
 ## Language model
