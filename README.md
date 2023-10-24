@@ -1,4 +1,4 @@
-# Bengali.AI Speech Recognition Challgene - 5th Place Solution
+# Bengali.AI Speech Recognition - 5th Place Solution
 Solution of the 5th of the Kaggle Bengali.AI speech recognition challenge
 
 # Download the following datasets:
