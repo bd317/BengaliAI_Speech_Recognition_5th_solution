@@ -68,7 +68,7 @@ This model will be trained for 210 steps.
 
 1b backbone:<br>
 **train_w2w_baseline_v32.ipynb**<br>
-This model will be trained for 130k steps (longer
+This model will be trained for 130k steps (longer training will give better results).
 
 ## Ensemble training
 
@@ -80,6 +80,13 @@ Use the 6k training step checkpoint.
 # Language model training:
 Run **language_model/language_model_current_v12.ipynb**<br>
 Copy the unigram from the lms/new_model_arpa to lms/new_model_bin_mixed after creating the binary file.
+
+# Punctuation model:
+Punctuation model checkpoint was taken from:<br>
+https://github.com/xashru/punctuation-restoration<br>
+The checkpoint can be found here:<br>
+https://drive.google.com/file/d/1X2udyT1XYrmCNvWtFpT_6jrWsQejGCBW/view?usp=sharing<br>
+The inference function was slightly modified to ensure that the last predicted sign is | or ?. For details see the linked inference notebook below.
 
 # Inference:
 Inference notebook is found here:<br>
